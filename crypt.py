@@ -3,12 +3,12 @@
 import hashlib
 
 byteorder = 'little'
-length = 32 * 2
+length = 32 * 2 #32 bytes == 256 bits,64 bytes == 512 bits
 
 def main():
-	key = b'\x00' * length #place 256 bit key here
+	key = b'\x00' * length #place 256/512 bit key here
 
-	#the data should be twice as long as the key (256 bit key => 512 bit data block)
+	#the data should be twice as long as the key (256/512 bit key => 512/1024 bit data block)
 	message = b''
 
 	message = message + b'\x00'*(length*2-len(message))
